@@ -2,10 +2,102 @@
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 
+import CarritoImg from '../assets/icons/Carrito.png';
+import VentaImg from '../assets/icons/Venta.png';
+import LibrosImg from '../assets/icons/Libros.png';
+import UsadoImg from '../assets/icons/Usados.png';
+import NuevoImg from '../assets/icons/Nuevo.png';
+import CasaTiendaImg from '../assets/icons/CasaTienda.png';
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
 	<Header />
+	<div class="w-full border border-gray-300 overflow-hidden bg-white font-serif">
+
+	<!-- Tabs de géneros -->
+	<div class="flex border-b border-gray-300">
+		<div class="flex-1 text-center py-1 px-1 border-r border-gray-300 text-lg tracking-widest italic cursor-pointer">TERROR</div>
+		<div class="flex-1 text-center py-1 px-1 border-r border-gray-300 text-lg tracking-widest italic cursor-pointer">ROMANCE</div>
+		<div class="flex-1 text-center py-1 px-1 border-r border-gray-300 text-lg tracking-widest italic cursor-pointer">COMEDIA</div>
+		<div class="flex-1 text-center py-1 px-1 border-r border-gray-300 text-lg tracking-widest italic cursor-pointer">MENTE</div>
+		<div class="flex-1 text-center py-1 px-1 text-lg tracking-widest italic cursor-pointer">EDUCATIVO</div>
+	</div>
+
+	<!-- Íconos de acciones -->
+	<div class="flex justify-around items-center py-5 px-2 border-b border-gray-300 bg-white">
+
+		<div class="flex flex-col items-center gap-2 cursor-pointer">
+		<div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
+			<img src={CarritoImg.src} alt="Compra" class="w-12 h-12" />
+		</div>
+		<span class="text-xs font-bold tracking-widest">COMPRA</span>
+		</div>
+
+		<div class="flex flex-col items-center gap-2 cursor-pointer">
+		<div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
+			<img src={VentaImg.src} alt="Venta" class="w-12 h-12" />
+		</div>
+		<span class="text-xs font-bold tracking-widest">VENTA</span>
+		</div>
+
+		<div class="flex flex-col items-center gap-2 cursor-pointer">
+		<div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
+			<img src={LibrosImg.src} alt="Mis Libros" class="w-12 h-12" />
+		</div>
+		<span class="text-xs font-bold tracking-widest">MIS LIBROS</span>
+		</div>
+
+		<div class="flex flex-col items-center gap-2 cursor-pointer">
+		<div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
+			<img src={UsadoImg.src} alt="Usado" class="w-12 h-12" />
+		</div>
+		<span class="text-xs font-bold tracking-widest">USADO</span>
+		</div>
+
+		<div class="flex flex-col items-center gap-2 cursor-pointer">
+		<div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
+			<img src={NuevoImg.src} alt="Nuevo" class="w-12 h-12" />
+		</div>
+		<span class="text-xs font-bold tracking-widest">NUEVO</span>
+		</div>
+
+	</div>
+
+	<!-- Banners promocionales -->
+	<div class="flex bg-gray-300 border-b border-gray-400">
+		<div class="flex-1 flex flex-col items-center justify-center py-3 px-4 border-r border-gray-400 text-center">
+		<p class="text-xs font-normal tracking-wide leading-5 mb-2">BUSCAS SUSTOS?<br>LO MÁS TERRORÍFICO DEL MES</p>
+		<button class="text-black text-xs font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary);">Ver más</button>
+		</div>
+		<div class="flex-1 flex flex-col items-center justify-center py-3 px-4 border-r border-gray-400 text-center">
+		<p class="text-xs font-normal tracking-wide leading-5 mb-2">ENDULZATE CON ESTAS<br>HISTORIAS DE ROMANCE</p>
+		<button class="text-black text-xs font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary);">Ver más</button>
+		</div>
+		<div class="flex-1 flex flex-col items-center justify-center py-3 px-4 text-center">
+		<p class="text-xs font-normal tracking-wide leading-5 mb-2">LA RISA ES LA MEJOR MEDICINA Y<br>NOSOTROS TENEMOS LA FÓRMULA</p>
+		<button class="text-black text-xs font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary);">Ver más</button>
+		</div>
+	</div>
+
+	<!-- Indicadores de carrusel -->
+	<div class="flex justify-center gap-1.5 py-2 bg-white items-center">
+		<span class="w-2 h-2 rounded-full bg-neutral-700 inline-block"></span>
+		<span class="w-3 h-3 rounded-full bg-neutral-700 inline-block"></span>
+		<span class="w-4.5 h-4.5 rounded-full bg-black inline-block"></span>
+		<span class="w-3 h-3 rounded-full bg-neutral-700 inline-block"></span>
+		<span class="w-2 h-2 rounded-full bg-neutral-700 inline-block"></span>
+	</div>
+
+	<!-- Banner Mi Tienda -->
+	<div class="flex items-center gap-4 py-3 px-6 mx-14 mb-4 rounded-md" style="background: var(--color-primary);">
+		<img src={CasaTiendaImg.src} alt="Casa Tienda" class="w-12 h-12" />
+		<div class="text-black text-sm font-normal tracking-widest leading-5">MI<br>TIENDA</div>
+		<div class="text-black text-2xl mx-1">←</div>
+		<div class="bg-white rounded px-5 py-2 text-sm font-normal text-gray-800 flex-1 text-center">¿Quieres compartir conocimiento?</div>
+	</div>
+
+	</div>
 </Layout>
