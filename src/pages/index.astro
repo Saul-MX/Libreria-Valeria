@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
 
 import CarritoImg from '../assets/icons/Carrito.png';
 import VentaImg from '../assets/icons/Venta.png';
@@ -15,70 +16,70 @@ import CasaTiendaImg from '../assets/icons/CasaTienda.png';
 
 <Layout>
 	<Header />
-	<div class="w-full borderoverflow-hidden bg-white font-serif">
+	<div class="w-full overflow-hidden bg-white font-serif">
 
 		<!-- Tabs de géneros -->
-		<div class="flex border-b border-gray-300">
-			<div class="flex-1 text-center py-1 px-1 border-r border-gray-300 text-lg tracking-widest italic cursor-pointer">TERROR</div>
-			<div class="flex-1 text-center py-1 px-1 border-r border-gray-300 text-lg tracking-widest italic cursor-pointer">ROMANCE</div>
-			<div class="flex-1 text-center py-1 px-1 border-r border-gray-300 text-lg tracking-widest italic cursor-pointer">COMEDIA</div>
-			<div class="flex-1 text-center py-1 px-1 border-r border-gray-300 text-lg tracking-widest italic cursor-pointer">MENTE</div>
-			<div class="flex-1 text-center py-1 px-1 text-lg tracking-widest italic cursor-pointer">EDUCATIVO</div>
+		<div class="flex flex-wrap justify-center min-[1000px]:flex-nowrap min-[1000px]:justify-between border-b border-gray-300">
+			<div class="w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 border-r border-b min-[1000px]:border-b-0 border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">TERROR</div>
+			<div class="w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 border-r border-b min-[1000px]:border-b-0 border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">ROMANCE</div>
+			<div class="w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 border-b min-[1000px]:border-b-0 min-[1000px]:border-r border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">COMEDIA</div>
+			<div class="w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 border-r min-[1000px]:border-r-0 border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">MENTE</div>
+			<div class="w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 min-[1000px]:border-r border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">MENTE</div>
 		</div>
 
 		<!-- Íconos de acciones -->
-		<div class="flex justify-around items-center py-5 px-2 border-b border-gray-300 bg-white">
+		<div class="flex flex-wrap justify-center min-[1000px]:flex-nowrap py-5 px-2 bg-white my-6 gap-y-6">
 
-			<div class="flex flex-col items-center gap-2 cursor-pointer">
-			<div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
-				<img src={CarritoImg.src} alt="Compra" class="w-12 h-12" />
-			</div>
-			<span class="text-xs font-bold tracking-widest">COMPRA</span>
-			</div>
-
-			<div class="flex flex-col items-center gap-2 cursor-pointer">
-			<div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
-				<img src={VentaImg.src} alt="Venta" class="w-12 h-12" />
-			</div>
-			<span class="text-xs font-bold tracking-widest">VENTA</span>
+			<div class="flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
+				<div class="w-24 h-24 min-[1000px]:w-40 min-[1000px]:h-40 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
+					<img src={CarritoImg.src} alt="Compra" class="w-16 h-16 min-[1000px]:w-28 min-[1000px]:h-28" />
+				</div>
+				<span class="text-base min-[1000px]:text-3xl tracking-widest">COMPRA</span>
 			</div>
 
-			<div class="flex flex-col items-center gap-2 cursor-pointer">
-			<div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
-				<img src={LibrosImg.src} alt="Mis Libros" class="w-12 h-12" />
-			</div>
-			<span class="text-xs font-bold tracking-widest">MIS LIBROS</span>
-			</div>
-
-			<div class="flex flex-col items-center gap-2 cursor-pointer">
-			<div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
-				<img src={UsadoImg.src} alt="Usado" class="w-12 h-12" />
-			</div>
-			<span class="text-xs font-bold tracking-widest">USADO</span>
+			<div class="flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
+				<div class="w-24 h-24 min-[1000px]:w-40 min-[1000px]:h-40 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
+					<img src={VentaImg.src} alt="Venta" class="w-16 h-16 min-[1000px]:w-28 min-[1000px]:h-28" />
+				</div>
+				<span class="text-base min-[1000px]:text-3xl tracking-widest">VENTA</span>
 			</div>
 
-			<div class="flex flex-col items-center gap-2 cursor-pointer">
-			<div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
-				<img src={NuevoImg.src} alt="Nuevo" class="w-12 h-12" />
+			<div class="flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
+				<div class="w-24 h-24 min-[1000px]:w-40 min-[1000px]:h-40 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
+					<img src={LibrosImg.src} alt="Mis Libros" class="w-16 h-16 min-[1000px]:w-28 min-[1000px]:h-28" />
+				</div>
+				<span class="text-base min-[1000px]:text-3xl tracking-widest">MIS LIBROS</span>
 			</div>
-			<span class="text-xs font-bold tracking-widest">NUEVO</span>
+
+			<div class="flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
+				<div class="w-24 h-24 min-[1000px]:w-40 min-[1000px]:h-40 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
+					<img src={UsadoImg.src} alt="Usado" class="w-16 h-16 min-[1000px]:w-28 min-[1000px]:h-28" />
+				</div>
+				<span class="text-base min-[1000px]:text-3xl tracking-widest">USADO</span>
+			</div>
+
+			<div class="flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
+				<div class="w-24 h-24 min-[1000px]:w-40 min-[1000px]:h-40 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
+					<img src={NuevoImg.src} alt="Nuevo" class="w-16 h-16 min-[1000px]:w-28 min-[1000px]:h-28" />
+				</div>
+				<span class="text-base min-[1000px]:text-3xl tracking-widest">NUEVO</span>
 			</div>
 
 		</div>
 
 		<!-- Banners promocionales -->
-		<div class="flex bg-gray-300 border-b border-gray-400">
+		<div class="flex bg-gray-300 border border-gray-400 mb-4">
 			<div class="flex-1 flex flex-col items-center justify-center py-3 px-4 border-r border-gray-400 text-center">
-			<p class="text-xs font-normal tracking-wide leading-5 mb-2">BUSCAS SUSTOS?<br>LO MÁS TERRORÍFICO DEL MES</p>
-			<button class="text-black text-xs font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary);">Ver más</button>
+			<p class="text-xl font-normal tracking-wide leading-5 mb-2">BUSCAS SUSTOS?<br>LO MÁS TERRORÍFICO DEL MES</p>
+			<button class="text-black text-lg font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary); font-family: Arial, Helvetica, sans-serif;">Ver más</button>
 			</div>
 			<div class="flex-1 flex flex-col items-center justify-center py-3 px-4 border-r border-gray-400 text-center">
-			<p class="text-xs font-normal tracking-wide leading-5 mb-2">ENDULZATE CON ESTAS<br>HISTORIAS DE ROMANCE</p>
-			<button class="text-black text-xs font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary);">Ver más</button>
+			<p class="text-xl font-normal tracking-wide leading-5 mb-2">ENDULZATE CON ESTAS<br>HISTORIAS DE ROMANCE</p>
+			<button class="text-black text-lg font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary); font-family: Arial, Helvetica, sans-serif;">Ver más</button>
 			</div>
 			<div class="flex-1 flex flex-col items-center justify-center py-3 px-4 text-center">
-			<p class="text-xs font-normal tracking-wide leading-5 mb-2">LA RISA ES LA MEJOR MEDICINA Y<br>NOSOTROS TENEMOS LA FÓRMULA</p>
-			<button class="text-black text-xs font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary);">Ver más</button>
+			<p class="text-xl font-normal tracking-wide leading-5 mb-2">LA RISA ES LA MEJOR MEDICINA Y<br>NOSOTROS TENEMOS LA FÓRMULA</p>
+			<button class="text-black text-lg font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary); font-family: Arial, Helvetica, sans-serif;">Ver más</button>
 			</div>
 		</div>
 
@@ -92,12 +93,13 @@ import CasaTiendaImg from '../assets/icons/CasaTienda.png';
 		</div>
 
 		<!-- Banner Mi Tienda -->
-		<div class="max-w-3xl flex items-center gap-4 py-3 px-6 m-auto mt-4 rounded-md" style="background: var(--color-primary);">
-			<img src={CasaTiendaImg.src} alt="Casa Tienda" class="w-12 h-12" />
-			<div class="text-black text-sm font-normal tracking-widest leading-5">MI<br>TIENDA</div>
+		<div class="max-w-3xl flex items-center gap-4 py-3 px-6 m-auto my-9 rounded-md" style="background: var(--color-primary);">
+			<img src={CasaTiendaImg.src} alt="Casa Tienda" class="w-16 h-16" />
+			<div class="text-black text-2xl font-normal tracking-widest leading-5">MI<br>TIENDA</div>
 			<div class="text-black text-2xl mx-1">←</div>
-			<div class="bg-white rounded px-5 py-2 text-sm font-normal text-gray-800 flex-1 text-center">¿Quieres compartir conocimiento?</div>
+			<div class="bg-white rounded px-5 py-2 text-xl font-normal text-gray-800 flex-1 text-center">¿Quieres compartir conocimiento?</div>
 		</div>
 
 	</div>
+	<Footer />
 </Layout>
