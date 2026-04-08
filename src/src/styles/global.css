@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+:root {
+    --color-primary: #7E1C87;
+    --color-secondary: #9C83AA;
+    --color-text: #0f0f0f;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}

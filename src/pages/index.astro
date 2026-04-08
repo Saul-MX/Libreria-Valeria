@@ -9,56 +9,53 @@ import LibrosImg from '../assets/icons/Libros.png';
 import UsadoImg from '../assets/icons/Usados.png';
 import NuevoImg from '../assets/icons/Nuevo.png';
 import CasaTiendaImg from '../assets/icons/CasaTienda.png';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
 	<Header />
-	<div class="w-full overflow-hidden bg-white font-serif">
+	<div class="w-full overflow-hidden bg-white font-serif -z-50">
 
 		<!-- Tabs de géneros -->
-		<div class="flex flex-wrap justify-center min-[1000px]:flex-nowrap min-[1000px]:justify-between border-b border-gray-300">
-			<div class="w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 border-r border-b min-[1000px]:border-b-0 border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">TERROR</div>
-			<div class="w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 border-r border-b min-[1000px]:border-b-0 border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">ROMANCE</div>
-			<div class="w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 border-b min-[1000px]:border-b-0 min-[1000px]:border-r border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">COMEDIA</div>
-			<div class="w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 border-r min-[1000px]:border-r-0 border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">MENTE</div>
-			<div class="w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 min-[1000px]:border-r border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">MENTE</div>
+		<div id="tabs-generos" class="flex flex-wrap justify-center min-[1000px]:flex-nowrap min-[1000px]:justify-between border-b border-gray-300">
+			<div class="tab-item w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 border-r border-b min-[1000px]:border-b-0 border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">TERROR</div>
+			<div class="tab-item w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 border-r border-b min-[1000px]:border-b-0 border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">ROMANCE</div>
+			<div class="tab-item w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 border-b min-[1000px]:border-b-0 min-[1000px]:border-r border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">COMEDIA</div>
+			<div class="tab-item w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 border-r min-[1000px]:border-r-0 border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">MENTE</div>
+			<div class="tab-item w-1/3 min-[1000px]:flex-1 text-center py-2 px-1 min-[1000px]:border-r border-gray-300 text-lg min-[1000px]:text-2xl tracking-widest italic cursor-pointer">EDUCATIVO</div>
 		</div>
 
 		<!-- Íconos de acciones -->
-		<div class="flex flex-wrap justify-center min-[1000px]:flex-nowrap py-5 px-2 bg-white my-6 gap-y-6">
+		<div id="iconos-acciones" class="flex flex-wrap justify-center min-[1000px]:flex-nowrap py-5 px-2 bg-white my-6 gap-y-6">
 
-			<div class="flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
+			<div class="icono-item flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
 				<div class="w-24 h-24 min-[1000px]:w-40 min-[1000px]:h-40 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
 					<img src={CarritoImg.src} alt="Compra" class="w-16 h-16 min-[1000px]:w-28 min-[1000px]:h-28" />
 				</div>
 				<span class="text-base min-[1000px]:text-3xl tracking-widest">COMPRA</span>
 			</div>
 
-			<div class="flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
+			<div class="icono-item flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
 				<div class="w-24 h-24 min-[1000px]:w-40 min-[1000px]:h-40 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
 					<img src={VentaImg.src} alt="Venta" class="w-16 h-16 min-[1000px]:w-28 min-[1000px]:h-28" />
 				</div>
 				<span class="text-base min-[1000px]:text-3xl tracking-widest">VENTA</span>
 			</div>
 
-			<div class="flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
+			<div class="icono-item flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
 				<div class="w-24 h-24 min-[1000px]:w-40 min-[1000px]:h-40 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
 					<img src={LibrosImg.src} alt="Mis Libros" class="w-16 h-16 min-[1000px]:w-28 min-[1000px]:h-28" />
 				</div>
 				<span class="text-base min-[1000px]:text-3xl tracking-widest">MIS LIBROS</span>
 			</div>
 
-			<div class="flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
+			<div class="icono-item flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
 				<div class="w-24 h-24 min-[1000px]:w-40 min-[1000px]:h-40 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
 					<img src={UsadoImg.src} alt="Usado" class="w-16 h-16 min-[1000px]:w-28 min-[1000px]:h-28" />
 				</div>
 				<span class="text-base min-[1000px]:text-3xl tracking-widest">USADO</span>
 			</div>
 
-			<div class="flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
+			<div class="icono-item flex flex-col items-center gap-2 cursor-pointer w-1/3 min-[1000px]:flex-1">
 				<div class="w-24 h-24 min-[1000px]:w-40 min-[1000px]:h-40 rounded-full flex items-center justify-center" style="background: var(--color-secondary);">
 					<img src={NuevoImg.src} alt="Nuevo" class="w-16 h-16 min-[1000px]:w-28 min-[1000px]:h-28" />
 				</div>
@@ -68,18 +65,18 @@ import CasaTiendaImg from '../assets/icons/CasaTienda.png';
 		</div>
 
 		<!-- Banners promocionales -->
-		<div class="flex bg-gray-300 border border-gray-400 mb-4">
-			<div class="flex-1 flex flex-col items-center justify-center py-3 px-4 border-r border-gray-400 text-center">
-			<p class="text-xl font-normal tracking-wide leading-5 mb-2">BUSCAS SUSTOS?<br>LO MÁS TERRORÍFICO DEL MES</p>
-			<button class="text-black text-lg font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary); font-family: Arial, Helvetica, sans-serif;">Ver más</button>
+		<div id="banners" class="flex bg-gray-300 border border-gray-400 mb-4">
+			<div class="banner-item flex-1 flex flex-col items-center justify-center py-3 px-4 border-r border-gray-400 text-center">
+				<p class="text-xl font-normal tracking-wide leading-5 mb-2">BUSCAS SUSTOS?<br>LO MÁS TERRORÍFICO DEL MES</p>
+				<button class="text-black text-lg font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary); font-family: Arial, Helvetica, sans-serif;">Ver más</button>
 			</div>
-			<div class="flex-1 flex flex-col items-center justify-center py-3 px-4 border-r border-gray-400 text-center">
-			<p class="text-xl font-normal tracking-wide leading-5 mb-2">ENDULZATE CON ESTAS<br>HISTORIAS DE ROMANCE</p>
-			<button class="text-black text-lg font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary); font-family: Arial, Helvetica, sans-serif;">Ver más</button>
+			<div class="banner-item flex-1 flex flex-col items-center justify-center py-3 px-4 border-r border-gray-400 text-center">
+				<p class="text-xl font-normal tracking-wide leading-5 mb-2">ENDULZATE CON ESTAS<br>HISTORIAS DE ROMANCE</p>
+				<button class="text-black text-lg font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary); font-family: Arial, Helvetica, sans-serif;">Ver más</button>
 			</div>
-			<div class="flex-1 flex flex-col items-center justify-center py-3 px-4 text-center">
-			<p class="text-xl font-normal tracking-wide leading-5 mb-2">LA RISA ES LA MEJOR MEDICINA Y<br>NOSOTROS TENEMOS LA FÓRMULA</p>
-			<button class="text-black text-lg font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary); font-family: Arial, Helvetica, sans-serif;">Ver más</button>
+			<div class="banner-item flex-1 flex flex-col items-center justify-center py-3 px-4 text-center">
+				<p class="text-xl font-normal tracking-wide leading-5 mb-2">LA RISA ES LA MEJOR MEDICINA Y<br>NOSOTROS TENEMOS LA FÓRMULA</p>
+				<button class="text-black text-lg font-bold tracking-wide py-1 px-4 rounded cursor-pointer" style="background: var(--color-secondary); font-family: Arial, Helvetica, sans-serif;">Ver más</button>
 			</div>
 		</div>
 
@@ -93,7 +90,7 @@ import CasaTiendaImg from '../assets/icons/CasaTienda.png';
 		</div>
 
 		<!-- Banner Mi Tienda -->
-		<div class="max-w-3xl flex items-center gap-4 py-3 px-6 m-auto my-9 rounded-md" style="background: var(--color-primary);">
+		<div id="banner-tienda" class="max-w-3xl flex items-center gap-4 py-3 px-6 m-auto my-9 rounded-md" style="background: var(--color-primary);">
 			<img src={CasaTiendaImg.src} alt="Casa Tienda" class="w-16 h-16" />
 			<div class="text-black text-2xl font-normal tracking-widest leading-5">MI<br>TIENDA</div>
 			<div class="text-black text-2xl mx-1">←</div>
@@ -103,3 +100,57 @@ import CasaTiendaImg from '../assets/icons/CasaTienda.png';
 	</div>
 	<Footer />
 </Layout>
+
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script is:inline>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Tabs — caen desde arriba en stagger
+    gsap.from('.tab-item', {
+        y: -40,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.08,
+        ease: 'power2.out',
+    });
+
+    // Íconos — suben con rebote en stagger
+    gsap.from('.icono-item', {
+        y: 60,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'back.out(1.7)',
+        scrollTrigger: {
+            trigger: '#iconos-acciones',
+            start: 'top 85%',
+        }
+    });
+
+    // Banners — entran desde abajo en stagger
+    gsap.from('.banner-item', {
+        y: 40,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.15,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '#banners',
+            start: 'top 90%',
+        }
+    });
+
+    // Banner Mi Tienda — entra desde la izquierda
+    gsap.from('#banner-tienda', {
+        x: -80,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '#banner-tienda',
+            start: 'top 90%',
+        }
+    });
+</script>

@@ -1,0 +1,348 @@
+---
+import FiltroIcon from '../assets/icons/Filtro.astro';
+import BusquedaIcon from '../assets/icons/Busqueda.astro';
+import UserIcon from '../assets/icons/User.astro';
+import InterrogacionIcon from '../assets/icons/Interrogacion.astro';
+import MenuIcon from '../assets/icons/Menu.astro';
+
+import LogoImg from '../assets/img/logo.png';
+
+import CasaMenuImg from '../assets/img/casa-menu.png';
+import CarritoMenuImg from '../assets/img/carrito-menu.png';
+import MapaMenuImg from '../assets/img/mapa-menu.png';
+import PuntosMenuImg from '../assets/img/puntos-menu.png';
+import EstrellaMenuImg from '../assets/img/estrella-menu.png';
+---
+
+<nav class="w-full flex flex-col min-[720px]:grid min-[720px]:grid-cols-3 min-[720px]:items-center bg-[#DBC5D9] min-[720px]:bg-[#7E1C87] relative z-[999]"
+     style="padding: 1rem 2rem;">
+
+    <!-- COLUMNA 1: Logo -->
+    <div id="nav-logo" class="flex justify-between min-[720px]:justify-start w-full min-[720px]:w-auto items-center gap-2 mb-3 min-[720px]:mb-0">
+        <figure>
+            <img src={LogoImg.src} alt="Logo" class="w-16 min-[720px]:w-9"/>
+        </figure>
+        <a class="uppercase flex flex-col text-xl min-[720px]:text-lg justify-center font-serif" href="/Libreria-Valeria">
+            El Gran <span class="m-auto" style="color: var(--color-secondary);">Lector</span>
+        </a>
+        <button id="menu-btn-mobile" class="cursor-pointer min-[720px]:hidden">
+            <MenuIcon class="w-8 h-8" />
+        </button>
+    </div>
+
+    <!-- COLUMNA 2: Buscador -->
+    <div id="nav-buscador" class="flex items-center justify-center gap-2 min-[720px]:gap-4 relative">
+
+        <div class="flex items-center gap-2 min-[720px]:hidden">
+            <button class="cursor-pointer">
+                <InterrogacionIcon class="w-8 h-8" />
+            </button>
+            <a href="/Libreria-Valeria/login" class="cursor-pointer">
+                <UserIcon class="w-8 h-8" />
+            </a>
+        </div>
+
+        <button id="filtro-btn" class="busqueda-filtro cursor-pointer hidden min-[720px]:block">
+            <FiltroIcon class="w-9 h-9" />
+        </button>
+
+        <!-- Dropdown filtro -->
+        <div style="background: #DBC5D9;" id="filtro-dropdown"
+     class="hidden absolute top-12 left-1/2 -translate-x-1/2 min-[720px]:translate-x-0 min-[720px]:left-0 w-72 min-[720px]:w-56 border border-neutral-900 rounded-xl shadow-lg z-[999]">
+            <ul class="py-2 px-2 text-sm text-gray-700">
+                <li class="relative">
+                    <button data-submenu="sub-libros" class="submenu-btn w-full flex justify-between items-center px-4 py-2 hover:bg-purple-100 font-semibold rounded-lg">
+                        Libros <span class="ml-2">›</span>
+                    </button>
+                    <ul id="sub-libros" class="hidden absolute left-full top-0 w-48 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Romance</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Historia</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Ciencia Ficción</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Fantasía</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Terror</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Suspenso</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Biografias</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Cientificos</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Cuentos</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Poesía</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Tragedia</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Comedia</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Ilustrados</a></li>
+                    </ul>
+                </li>
+                <li class="relative">
+                    <button data-submenu="sub-libros" class="submenu-btn w-full flex justify-between items-center px-4 py-2 hover:bg-purple-100 font-semibold rounded-lg">
+                        Ebooks <span class="ml-2">›</span>
+                    </button>
+                    <ul id="sub-libros" class="hidden absolute left-full top-0 w-48 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Romance</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Historia</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Ciencia Ficción</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Fantasía</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Terror</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Suspenso</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Biografias</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Cientificos</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Cuentos</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Poesía</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Tragedia</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Comedia</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Ilustrados</a></li>
+                    </ul>
+                </li>
+                <li class="relative">
+                    <button data-submenu="sub-libros" class="submenu-btn w-full flex justify-between items-center px-4 py-2 hover:bg-purple-100 font-semibold rounded-lg">
+                        AudioLibros <span class="ml-2">›</span>
+                    </button>
+                    <ul id="sub-libros" class="hidden absolute left-full top-0 w-48 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Romance</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Historia</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Ciencia Ficción</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Fantasía</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Terror</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Suspenso</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Biografias</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Cientificos</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Cuentos</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Poesía</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Tragedia</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Comedia</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Ilustrados</a></li>
+                    </ul>
+                </li>
+                <li class="relative">
+                    <button data-submenu="no-de-paginas" class="submenu-btn w-full flex justify-between items-center px-4 py-2 hover:bg-purple-100 font-semibold rounded-lg">
+                        No. de páginas <span class="ml-2">›</span>
+                    </button>
+                    <ul id="no-de-paginas" class="hidden absolute left-full top-0 w-48 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
+                        <li><a href="/Libreria-Valeria/no-de-paginas" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Mas de 150</a></li>
+                    </ul>
+                </li>
+                <li class="relative group pb-2">
+                    <button class="w-full flex justify-between items-center px-4 py-2 hover:bg-purple-100 font-semibold rounded-lg">
+                        Precio <span class="ml-2">›</span>
+                    </button>
+                    <ul class="hidden group-hover:block absolute left-full top-0 w-48 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
+                        <li><a href="/Libreria-Valeria/precio" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">$300 - $699</a></li>
+                    </ul>
+                </li>
+                <li class="border-t border-neutral-900 pt-2">
+                    <a href="#" class="block px-4 py-2 text-red-400 hover:bg-red-50 rounded-lg">Limpiar filtros</a>
+                </li>
+            </ul>
+        </div>
+
+        <input type="text" placeholder="Buscar..."
+            class="flex-1 min-w-0 max-w-[120px] min-[720px]:max-w-none min-[720px]:w-64 bg-white border border-gray-300 rounded-lg px-2 py-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-300"
+        />
+
+        <button class="cursor-pointer">
+            <BusquedaIcon class="w-8 h-8 min-[720px]:w-9 min-[720px]:h-9" />
+        </button>
+
+        <button id="filtro-btn-mobile" class="cursor-pointer min-[720px]:hidden">
+            <FiltroIcon class="w-8 h-8" />
+            
+        </button>
+    </div>
+
+    <!-- COLUMNA 3: Íconos derecha -->
+    <div id="nav-iconos" class="hidden min-[720px]:flex items-center gap-4 justify-end">
+        <a href="/Libreria-Valeria/login" class="cursor-pointer nav-icon"><UserIcon class="w-9 h-9" /></a>
+        <a class="cursor-pointer nav-icon"><InterrogacionIcon class="w-9 h-9" /></a>
+        <a id="menu-btn" class="cursor-pointer nav-icon"><MenuIcon class="w-9 h-9" /></a>
+    </div>
+
+</nav>
+
+<!-- Overlay oscuro -->
+<div id="menu-overlay" class="fixed inset-0 bg-black/40 z-40 hidden" style="z-index: 9999998;"></div>
+
+<!-- Drawer lateral derecho -->
+<aside
+    id="menu-drawer"
+    class="fixed top-0 right-0 h-full w-56 z-50 translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto"
+    style="background-color: var(--color-primary); border-radius: 1rem 0 0 1rem; z-index: 9999999;"
+>
+    <div class="flex items-center justify-between px-3 py-3 border-b border-neutral-800 sticky top-0"
+         style="background-color: var(--color-primary);">
+        <span class="text-white font-bold text-sm">Menú</span>
+        <button id="menu-close"
+                class="bg-white text-purple-900 w-7 h-7 rounded-full font-bold cursor-pointer flex items-center justify-center text-sm">
+            ✕
+        </button>
+    </div>
+
+    <ul class="flex flex-col">
+        <li class="drawer-item">
+            <a href="#" class="flex items-center gap-3 px-4 py-4 border-b border-neutral-800 hover:brightness-110 transition-all">
+                <span class="w-10 h-10 rounded-lg flex items-center justify-center">
+                    <img src={CasaMenuImg.src} alt="Inicio" />
+                </span>
+                <span class="text-white font-semibold text-lg">Inicio</span>
+            </a>
+        </li>
+        <li class="drawer-item">
+            <a href="#" class="flex items-center gap-3 px-4 py-4 border-b border-neutral-800 hover:brightness-110 transition-all">
+                <span class="w-10 h-10 rounded-lg bg-yellow-500 flex items-center justify-center">
+                    <img src={EstrellaMenuImg.src} alt="Favoritos" />
+                </span>
+                <span class="text-white font-semibold text-lg">Favoritos</span>
+            </a>
+        </li>
+        <li class="drawer-item">
+            <a href="#" class="flex items-center gap-3 px-4 py-4 border-b border-neutral-800 hover:brightness-110 transition-all">
+                <span class="w-10 h-10 rounded-lg bg-red-500 flex items-center justify-center">
+                    <img src={MapaMenuImg.src} alt="Sucursales" />
+                </span>
+                <span class="text-white font-semibold text-lg">Sucursales</span>
+            </a>
+        </li>
+        <li class="drawer-item">
+            <a href="#" class="flex items-center gap-3 px-4 py-4 border-b border-neutral-800 hover:brightness-110 transition-all">
+                <span class="w-10 h-10 rounded-lg bg-blue-500 flex items-center justify-center">
+                    <img src={PuntosMenuImg.src} alt="Mis Puntos" />
+                </span>
+                <span class="text-white font-semibold text-lg">Mis Puntos</span>
+            </a>
+        </li>
+        <li class="drawer-item">
+            <a href="#" class="flex items-center gap-3 px-4 py-4 border-b border-neutral-800 hover:brightness-110 transition-all">
+                <span class="w-10 h-10 rounded-lg bg-purple-700 flex items-center justify-center">
+                    <img src={CarritoMenuImg.src} alt="Carrito" />
+                </span>
+                <span class="text-white font-semibold text-lg">Carrito</span>
+            </a>
+        </li>
+    </ul>
+</aside>
+
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script is:inline>
+    // ── Drawer logic ──
+    const menuDrawer = document.getElementById("menu-drawer");
+    const menuOverlay = document.getElementById("menu-overlay");
+    const menuClose = document.getElementById("menu-close");
+
+    function openDrawer() {
+        menuDrawer.classList.remove("translate-x-full");
+        menuOverlay.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+        document.body.style.overflowX = "hidden";
+
+        // Anima los items del drawer al abrirse
+        gsap.from('.drawer-item', {
+            x: 60,
+            opacity: 0,
+            duration: 0.35,
+            stagger: 0.08,
+            ease: 'power2.out',
+        });
+    }
+
+    function closeDrawer() {
+        menuDrawer.classList.add("translate-x-full");
+        menuOverlay.classList.add("hidden");
+        document.body.style.overflow = "";
+        document.body.style.overflowX = "";
+    }
+
+    document.getElementById("menu-btn")?.addEventListener("click", openDrawer);
+    document.getElementById("menu-btn-mobile")?.addEventListener("click", openDrawer);
+    menuClose.addEventListener("click", closeDrawer);
+    menuOverlay.addEventListener("click", closeDrawer);
+
+    // Filtro — desktop y mobile comparten el mismo dropdown
+    const filtroBtn = document.getElementById("filtro-btn");
+    const filtroBtnMobile = document.getElementById("filtro-btn-mobile");
+    const filtroDropdown = document.getElementById("filtro-dropdown");
+
+    function toggleFiltro(e) {
+        e.stopPropagation(); // evita que el click se propague al document
+        const isHidden = filtroDropdown.classList.contains("hidden");
+        filtroDropdown.classList.toggle("hidden");
+        if (isHidden) {
+            gsap.from(filtroDropdown, {
+                y: -10,
+                opacity: 0,
+                duration: 0.25,
+                ease: 'power2.out',
+            });
+        }
+    }
+
+    filtroBtn?.addEventListener("click", toggleFiltro);
+    filtroBtnMobile?.addEventListener("click", toggleFiltro);
+
+    // UN solo listener para cerrar al tocar fuera
+    document.addEventListener("click", (e) => {
+        if (filtroDropdown &&
+            !filtroDropdown.contains(e.target)) {
+            filtroDropdown.classList.add("hidden");
+        }
+    });
+
+    // Submenús — click en mobile, hover en desktop
+    document.querySelectorAll('.submenu-btn').forEach(btn => {
+        // Click para mobile
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const targetId = btn.getAttribute('data-submenu');
+            const submenu = document.getElementById(targetId);
+
+            // Cierra los demás
+            document.querySelectorAll('.submenu-list').forEach(el => {
+                if (el.id !== targetId) el.classList.add('hidden');
+            });
+
+            submenu.classList.toggle('hidden');
+        });
+
+        // Hover para desktop
+        const li = btn.parentElement;
+        const targetId = btn.getAttribute('data-submenu');
+        const submenu = document.getElementById(targetId);
+
+        li.addEventListener('mouseenter', () => {
+            if (window.innerWidth >= 720) submenu.classList.remove('hidden');
+        });
+        li.addEventListener('mouseleave', () => {
+            if (window.innerWidth >= 720) submenu.classList.add('hidden');
+        });
+    });
+
+    // ── Animaciones de entrada del nav ──
+    gsap.from('#nav-logo', {
+        x: -40,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+    });
+
+    gsap.from('#nav-buscador', {
+        y: -20,
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.15,
+        ease: 'power2.out',
+    });
+
+    gsap.from('#nav-iconos', {
+        x: 40,
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.25,
+        ease: 'power2.out',
+    });
+
+    // Hover en íconos del nav
+    document.querySelectorAll('.nav-icon').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            gsap.to(el, { scale: 1.2, duration: 0.15, ease: 'power1.out' });
+        });
+        el.addEventListener('mouseleave', () => {
+            gsap.to(el, { scale: 1, duration: 0.15, ease: 'power1.out' });
+        });
+    });
+</script>
