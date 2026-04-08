@@ -48,13 +48,13 @@ import EstrellaMenuImg from '../assets/img/estrella-menu.png';
 
         <!-- Dropdown filtro -->
         <div style="background: #DBC5D9;" id="filtro-dropdown"
-     class="hidden absolute top-12 left-1/2 -translate-x-1/2 min-[720px]:translate-x-0 min-[720px]:left-0 w-72 min-[720px]:w-56 border border-neutral-900 rounded-xl shadow-lg z-[999]">
+     class="hidden absolute top-12 left-1/3 -translate-x-1/2 min-[720px]:translate-x-0 min-[720px]:left-0 w-48 min-[720px]:w-56 border border-neutral-900 rounded-xl shadow-lg z-[999]">
             <ul class="py-2 px-2 text-sm text-gray-700">
                 <li class="relative">
                     <button data-submenu="sub-libros" class="submenu-btn w-full flex justify-between items-center px-4 py-2 hover:bg-purple-100 font-semibold rounded-lg">
                         Libros <span class="ml-2">›</span>
                     </button>
-                    <ul id="sub-libros" class="hidden absolute left-full top-0 w-48 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
+                    <ul id="sub-libros" class="hidden absolute left-full top-0 w-44 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
                         <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Romance</a></li>
                         <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Historia</a></li>
                         <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Ciencia Ficción</a></li>
@@ -74,7 +74,7 @@ import EstrellaMenuImg from '../assets/img/estrella-menu.png';
                     <button data-submenu="sub-libros" class="submenu-btn w-full flex justify-between items-center px-4 py-2 hover:bg-purple-100 font-semibold rounded-lg">
                         Ebooks <span class="ml-2">›</span>
                     </button>
-                    <ul id="sub-libros" class="hidden absolute left-full top-0 w-48 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
+                    <ul id="sub-libros" class="hidden absolute left-full top-0 w-44 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
                         <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Romance</a></li>
                         <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Historia</a></li>
                         <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Ciencia Ficción</a></li>
@@ -94,7 +94,7 @@ import EstrellaMenuImg from '../assets/img/estrella-menu.png';
                     <button data-submenu="sub-libros" class="submenu-btn w-full flex justify-between items-center px-4 py-2 hover:bg-purple-100 font-semibold rounded-lg">
                         AudioLibros <span class="ml-2">›</span>
                     </button>
-                    <ul id="sub-libros" class="hidden absolute left-full top-0 w-48 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
+                    <ul id="sub-libros" class="hidden absolute left-full top-0 w-44 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
                         <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Romance</a></li>
                         <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Historia</a></li>
                         <li><a href="#" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Ciencia Ficción</a></li>
@@ -114,15 +114,15 @@ import EstrellaMenuImg from '../assets/img/estrella-menu.png';
                     <button data-submenu="no-de-paginas" class="submenu-btn w-full flex justify-between items-center px-4 py-2 hover:bg-purple-100 font-semibold rounded-lg">
                         No. de páginas <span class="ml-2">›</span>
                     </button>
-                    <ul id="no-de-paginas" class="hidden absolute left-full top-0 w-48 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
+                    <ul id="no-de-paginas" class="hidden absolute left-full top-0 w-44 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
                         <li><a href="/Libreria-Valeria/no-de-paginas" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">Mas de 150</a></li>
                     </ul>
                 </li>
-                <li class="relative group pb-2">
-                    <button class="w-full flex justify-between items-center px-4 py-2 hover:bg-purple-100 font-semibold rounded-lg">
+                <li class="relative">
+                    <button data-submenu="precio" class="submenu-btn w-full flex justify-between items-center px-4 py-2 hover:bg-purple-100 font-semibold rounded-lg">
                         Precio <span class="ml-2">›</span>
                     </button>
-                    <ul class="hidden group-hover:block absolute left-full top-0 w-48 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
+                    <ul id="precio" class="hidden absolute left-full top-0 w-44 border border-neutral-900 rounded-xl shadow-lg px-1 py-1" style="background: #DBC5D9;">
                         <li><a href="/Libreria-Valeria/precio" class="block px-4 py-2 hover:bg-purple-100 rounded-lg">$300 - $699</a></li>
                     </ul>
                 </li>
